@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\asm\xInt2d32.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </MASM>
+    <MASM Include="..\asm\xInt2d64.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\external\aes256\aes256.h" />
+    <ClInclude Include="..\external\MemoryModule\MemoryModule.h" />
+    <ClInclude Include="..\inc\xConversion.h" />
+    <ClInclude Include="..\inc\xCrash.h" />
+    <ClInclude Include="..\inc\xDebuggerDetection.h" />
+    <ClInclude Include="..\inc\xDelay.h" />
+    <ClInclude Include="..\inc\xDynamicModule.h" />
+    <ClInclude Include="..\inc\xLibMaliciousExternalApi.h" />
+    <ClInclude Include="..\inc\xFreeze.h" />
+    <ClInclude Include="..\inc\xLibMaliciousApi.h" />
+    <ClInclude Include="..\inc\xMemory.h" />
+    <ClInclude Include="..\inc\xMemoryModule.h" />
+    <ClInclude Include="..\inc\xMemoryModulePatch.h" />
+    <ClInclude Include="..\inc\xObfuscation.h" />
+    <ClInclude Include="..\inc\xOsApi.h" />
+    <ClInclude Include="..\inc\xOsReplacementApi.h" />
+    <ClInclude Include="..\inc\xPayloadApi.h" />
+    <ClInclude Include="..\inc\xRandom.h" />
+    <ClInclude Include="..\inc\xSandboxDetection.h" />
+    <ClInclude Include="..\inc\xStaticModule.h" />
+    <ClInclude Include="..\inc\xString.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\external\aes256\aes256.c" />
+    <ClCompile Include="..\external\MemoryModule\MemoryModule.cpp" />
+    <ClCompile Include="..\src\xConversion.cpp" />
+    <ClCompile Include="..\src\xCrash.cpp" />
+    <ClCompile Include="..\src\xDebuggerDetection.cpp" />
+    <ClCompile Include="..\src\xDelay.cpp" />
+    <ClCompile Include="..\src\xDynamicModule.cpp" />
+    <ClCompile Include="..\src\xFreeze.cpp" />
+    <ClCompile Include="..\src\xMemory.cpp" />
+    <ClCompile Include="..\src\xMemoryModule.cpp" />
+    <ClCompile Include="..\src\xObfuscation.cpp" />
+    <ClCompile Include="..\src\xOsReplacementApi.cpp" />
+    <ClCompile Include="..\src\xRandom.cpp" />
+    <ClCompile Include="..\src\xSandboxDetection.cpp" />
+    <ClCompile Include="..\src\xString.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1A238E4-7CA0-4E18-B3E1-DE2B53C5C6DD}</ProjectGuid>
+    <RootNamespace>Base</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

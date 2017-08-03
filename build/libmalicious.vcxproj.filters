@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{c891c0eb-6e05-4eca-8250-a66fb8ae591c}</UniqueIdentifier>
+      <Extensions>cpp;</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{30e0ae16-ca2f-4f2d-82c1-f91bd2120ae3}</UniqueIdentifier>
+      <Extensions>h;</Extensions>
+    </Filter>
+    <Filter Include="asm">
+      <UniqueIdentifier>{9db01793-50c8-4f4c-9ba5-dd618e0a5ec1}</UniqueIdentifier>
+      <Extensions>asm;</Extensions>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{b79c3943-eb23-4442-a5d7-6a40e41ed056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\aes256">
+      <UniqueIdentifier>{69bd85be-7da7-450b-84a9-ebcc49af236c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\MemoryModule">
+      <UniqueIdentifier>{0b25e2b0-884a-49bb-a6a6-312d33bd91a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\asm\xInt2d64.asm">
+      <Filter>asm</Filter>
+    </MASM>
+    <MASM Include="..\asm\xInt2d32.asm">
+      <Filter>asm</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\xCrash.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xDebuggerDetection.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xDelay.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xDynamicModule.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xFreeze.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xLibMaliciousApi.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xMemory.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xObfuscation.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xOsApi.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xRandom.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xSandboxDetection.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xStaticModule.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\aes256\aes256.h">
+      <Filter>external\aes256</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xConversion.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\MemoryModule\MemoryModule.h">
+      <Filter>external\MemoryModule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xMemoryModule.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xString.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xPayloadApi.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xLibMaliciousExternalApi.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xOsReplacementApi.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xMemoryModulePatch.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\xCrash.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xDebuggerDetection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xDelay.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xFreeze.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xMemory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xRandom.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\aes256\aes256.c">
+      <Filter>external\aes256</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xObfuscation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xConversion.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xSandboxDetection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xString.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xMemoryModule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xDynamicModule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xOsReplacementApi.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\MemoryModule\MemoryModule.cpp">
+      <Filter>external\MemoryModule</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
