@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xString.h"
 
 #include <string.h>

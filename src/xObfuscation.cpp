@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xObfuscation.h"
 
 #include "aes256.h"

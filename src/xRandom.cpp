@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xRandom.h"
 
 #include <stdlib.h>

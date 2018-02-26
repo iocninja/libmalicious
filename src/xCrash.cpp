@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xCrash.h"
 
 #include "xLibMaliciousApi.h"

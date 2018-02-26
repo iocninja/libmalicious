@@ -1,4 +1,9 @@
+//
+// skulk@ioc.ninja
+//
 #pragma once
+
+
 
 #include <Windows.h>
 #include <IPHlpApi.h>

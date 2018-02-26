@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xSandboxDetection.h"
 
 #include <intrin.h>

@@ -1,3 +1,6 @@
+//
+// skulk@ioc.ninja
+//
 #include "xDebuggerDetection.h"
 
 #include <Windows.h>
