@@ -514,7 +514,7 @@ private:
 	xDynamicModule();
 
 public:
-	xDynamicModule(const wchar_t* name);
+	xDynamicModule(const wchar_t* fileName);
 	
 	xDynamicModule(HMODULE module);
 	

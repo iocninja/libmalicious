@@ -9,7 +9,7 @@
 
 void* xMemoryAlloc(const size_t size)
 {
-	return X_KERNEL32_CALL(VirtualAlloc)(NULL, size, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
+	return VirtualAlloc(NULL, size, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
 }
 
 void xMemoryCopy(void* to, const void* from, const size_t size)
@@ -19,7 +19,7 @@ void xMemoryCopy(void* to, const void* from, const size_t size)
 
 void xMemoryFree(void* memory)
 {
-	X_KERNEL32_CALL(VirtualFree)(memory, 0, MEM_RELEASE);
+	VirtualFree(memory, 0, MEM_RELEASE);
 }
 
 void xMemoryZero(void* memory, const size_t size)

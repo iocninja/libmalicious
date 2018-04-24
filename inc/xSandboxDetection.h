@@ -9,8 +9,8 @@
 
 
 
-bool xSandboxDetectionIsHypervisor();
-
 bool xSandboxDetectionIsCuckoo();
 
 bool xSandboxDetectionIsDomainMember();
+
+bool xSandboxDetectionIsHypervisor();

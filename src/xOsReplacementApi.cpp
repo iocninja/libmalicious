@@ -78,3 +78,19 @@ void* xOsReplacementApiGetProcAddress(HANDLE module, const char* name)
 
 	return NULL;
 }
+
+HMODULE xOsReplacementApiLoadLibraryW(const wchar_t* name)
+{
+	return NULL;
+}
+
+HMODULE xOsReplacementApiLoadLibraryA(const char* name)
+{
+	return NULL;
+}
+
+bool xOsReplacementApiFreeLibrary(HMODULE module)
+{
+	return false;
+}
+

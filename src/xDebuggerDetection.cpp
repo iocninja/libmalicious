@@ -14,6 +14,7 @@ extern "C" void __x_int2d();
 
 bool xDebuggerDetectionInt2d()
 {
+#ifdef X_USE_DEBUGGER_DETECTION
 	__try
 	{
 		__x_int2d();
@@ -24,6 +25,9 @@ bool xDebuggerDetectionInt2d()
 	}
 
 	return true;
+#else // X_USE_DEBUGGER_DETECTION
+	return false;
+#endif 
 }
 
 

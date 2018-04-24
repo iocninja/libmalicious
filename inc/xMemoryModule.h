@@ -519,11 +519,15 @@ class xMemoryModule
 public:
 	xMemoryModule();
 
+	xMemoryModule(const wchar_t* fileName);
+
 	xMemoryModule(const void* buffer, const size_t size);
 
 	xMemoryModule(HMEMORYMODULE module);
 
 	~xMemoryModule();
+
+	bool Load(const wchar_t* fileName);
 
 	bool Load(const void* buffer, const size_t size);
 
@@ -547,11 +551,11 @@ FARPROC xMemoryModuleDefaultGetProcAddress(HCUSTOMMODULE, LPCSTR, void*);
 
 
 
-#define X_MEMORY_MODULE_BEGIN(__Class) \
+#define X_MEMORY_MODULE_BEGIN(__Class, __Name) \
 	class __Class : public xMemoryModule \
 	{ \
 	public:	\
-		__Class() : xMemoryModule() {}
+		__Class() : xMemoryModule(__Name) {}
 
 #define X_MEMORY_MODULE_END(__Class) \
 	}; \

@@ -12,9 +12,9 @@ xDynamicModule::xDynamicModule()
 
 
 
-xDynamicModule::xDynamicModule(const wchar_t* name) : m_module(NULL)
+xDynamicModule::xDynamicModule(const wchar_t* fileName) : m_module(NULL)
 {
-	m_module = LoadLibraryW(name);
+	m_module = LoadLibraryW(fileName);
 }
 
 

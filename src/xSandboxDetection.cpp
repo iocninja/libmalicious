@@ -11,15 +11,7 @@
 
 
 
-bool xSandboxDetectionIsHypervisor()
-{
-	int32_t cpuInfo[4];
-
-	__cpuid((int32_t*) cpuInfo, 1);
-
-	// Check hypervisor bit
-	return ((cpuInfo[2] >> 31) & 1) == 1;
-}
+#define X_FORTI_SANDBOX_FOLDER L"C:\\Work"
 
 
 
@@ -32,8 +24,6 @@ bool xSandboxDetectionIsCuckoo()
 	// Detect Cuckoo hook opcode
 	return pfn ? (*(uint8_t*) pfn == 0xe9) : false;
 }
-
-
 
 bool xSandboxDetectionIsDomainMember()
 {
@@ -57,4 +47,25 @@ bool xSandboxDetectionIsDomainMember()
 	}
 
 	return result;
+}
+
+bool xSandboxDetectionIsFortiSandbox()
+{
+	const DWORD fa = X_KERNEL32_CALL(GetFileAttributesW)(X_FORTI_SANDBOX_FOLDER);
+
+	// Detect FortiSandbox work folder
+	return ((fa != INVALID_FILE_ATTRIBUTES) && (fa & FILE_ATTRIBUTE_DIRECTORY));
+}
+
+bool xSandboxDetectionIsHypervisor()
+{
+	return false;
+/*
+	int32_t cpuInfo[4];
+
+	__cpuid((int32_t*) cpuInfo, 1);
+
+	// Check hypervisor bit
+	return ((cpuInfo[2] >> 31) & 1) == 1;
+*/
 }
