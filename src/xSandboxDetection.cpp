@@ -11,10 +11,6 @@
 
 
 
-#define X_FORTI_SANDBOX_FOLDER L"C:\\Work"
-
-
-
 bool xSandboxDetectionIsCuckoo()
 {
 	xDynamicModule mod(X_OBFUSCATED_STRING_W(L"Kernel32.dll"));
@@ -51,7 +47,9 @@ bool xSandboxDetectionIsDomainMember()
 
 bool xSandboxDetectionIsFortiSandbox()
 {
-	const DWORD fa = X_KERNEL32_CALL(GetFileAttributesW)(X_FORTI_SANDBOX_FOLDER);
+	const wchar_t* indicator = X_OBFUSCATED_STRING_W(L"C:\\Work");
+
+	const DWORD fa = X_KERNEL32_CALL(GetFileAttributesW)(indicator);
 
 	// Detect FortiSandbox work folder
 	return ((fa != INVALID_FILE_ATTRIBUTES) && (fa & FILE_ATTRIBUTE_DIRECTORY));

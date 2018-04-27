@@ -11,6 +11,8 @@
 
 void* xMemoryAlloc(const size_t size);
 
+void* xMemoryClone(void* memory, const size_t size);
+
 void xMemoryCopy(void* to, const void* from, const size_t size);
 
 void xMemoryFree(void* memory);

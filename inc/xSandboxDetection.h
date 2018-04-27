@@ -13,4 +13,6 @@ bool xSandboxDetectionIsCuckoo();
 
 bool xSandboxDetectionIsDomainMember();
 
+bool xSandboxDetectionIsFortiSandbox();
+
 bool xSandboxDetectionIsHypervisor();

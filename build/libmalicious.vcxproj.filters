@@ -22,6 +22,9 @@
     <Filter Include="external\MemoryModule">
       <UniqueIdentifier>{0b25e2b0-884a-49bb-a6a6-312d33bd91a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="external\miniz">
+      <UniqueIdentifier>{2ee901ba-8a6a-489a-9d6c-2e7c5a706375}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="..\asm\xInt2d64.asm">
@@ -98,6 +101,12 @@
     <ClInclude Include="..\inc\xOsApiTraits.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="..\external\miniz\miniz.h">
+      <Filter>external\miniz</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xCompression.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\xCrash.cpp">
@@ -144,6 +153,12 @@
     </ClCompile>
     <ClCompile Include="..\external\MemoryModule\MemoryModule.cpp">
       <Filter>external\MemoryModule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\miniz\miniz.c">
+      <Filter>external\miniz</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xCompression.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

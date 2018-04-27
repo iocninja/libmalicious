@@ -30,8 +30,6 @@ bool xDebuggerDetectionInt2d()
 #endif 
 }
 
-
-
 bool xDebuggerDetectionIsPresent()
 {
 #if defined _DEBUG

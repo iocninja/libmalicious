@@ -8,6 +8,7 @@
 
 #include "aes256.h"
 #include "MemoryModule.h"
+#include "miniz.h"
 
 
 
@@ -46,6 +47,12 @@ public:
 		X_STATIC_MODULE_FUNCTION_2(FARPROC, MemoryGetProcAddress, HMEMORYMODULE, const char*)
 		X_STATIC_MODULE_FUNCTION_2(HMEMORYMODULE, MemoryLoadLibrary, const void*, size_t)
 		X_STATIC_MODULE_FUNCTION_8(HMEMORYMODULE, MemoryLoadLibraryEx, const void*, size_t, CustomAllocFunc, CustomFreeFunc, CustomLoadLibraryFunc, CustomGetProcAddressFunc, CustomFreeLibraryFunc, void*)
+
+		// miniz
+		X_STATIC_MODULE_FUNCTION_1(mz_ulong, mz_compressBound, mz_ulong)
+		X_STATIC_MODULE_FUNCTION_5(int, mz_compress2, unsigned char*, mz_ulong*, const unsigned char*, mz_ulong, int)
+		X_STATIC_MODULE_FUNCTION_4(int, mz_uncompress, unsigned char*, mz_ulong*, const unsigned char*, mz_ulong)
+
 	X_STATIC_MODULE_END(LibMaliciousExternal)
 };
 
@@ -53,7 +60,7 @@ static xLibMaliciousExternalApi& xGetLibMaliciousExternalApi() { return xLibMali
 
 
 
-#ifdef X_USE_OBFUSCATED_API
+#ifdef X_USE_LIB_MALICIOUS_EXTERNAL_API
 	#define X_LIB_MALICIOUS_EXTERNAL_CALL(__Name)	xGetLibMaliciousExternalApi().GetLibMaliciousExternal().##__Name
 #else
 	#define X_LIB_MALICIOUS_EXTERNAL_CALL(__Name)	__Name

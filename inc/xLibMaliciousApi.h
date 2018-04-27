@@ -5,6 +5,7 @@
 
 
 
+#include "xCompression.h"
 #include "xConversion.h"
 #include "xCrash.h"
 #include "xDebuggerDetection.h"
@@ -44,6 +45,10 @@ public:
 		X_STATIC_MODULE_FUNCTION_4(bool, xConversionBase64Encode, const uint8_t*, const size_t, char**, size_t*)
 		X_STATIC_MODULE_FUNCTION_4(bool, xConversionBase64Decode, const char*, const size_t, uint8_t**, size_t*)
 
+		// xCompression
+		X_STATIC_MODULE_FUNCTION_4(bool, xCompressionCompress, const uint8_t*, const uint32_t, uint8_t**, uint32_t*);
+		X_STATIC_MODULE_FUNCTION_4(bool, xCompressionDecompress, const uint8_t*, const uint32_t, uint8_t**, uint32_t*);
+
 		// xCrash
 		X_STATIC_MODULE_FUNCTION_0(void, xCrashAccessViolation)
 		X_STATIC_MODULE_FUNCTION_0(void, xCrashDivideByZero)
@@ -77,8 +82,8 @@ public:
 		X_STATIC_MODULE_FUNCTION_3(FARPROC, xMemoryModuleDefaultGetProcAddress, HCUSTOMMODULE, LPCSTR, void*)
 
 		// xObfuscation
-		X_STATIC_MODULE_FUNCTION_6(bool, xObfuscationObfuscateAes, const uint8_t*, const uint32_t, const uint8_t*, const uint32_t, uint8_t**, uint32_t*)
-		X_STATIC_MODULE_FUNCTION_6(bool, xObfuscationDeobfuscateAes, const uint8_t*, const uint32_t, const uint8_t*, const uint32_t, uint8_t**, uint32_t*)
+		X_STATIC_MODULE_FUNCTION_7(bool, xObfuscationObfuscateAes, const uint8_t*, const uint32_t, const uint8_t*, const uint32_t, uint8_t**, uint32_t*, const xObfuscationEntropy)
+		X_STATIC_MODULE_FUNCTION_7(bool, xObfuscationDeobfuscateAes, const uint8_t*, const uint32_t, const uint8_t*, const uint32_t, uint8_t**, uint32_t*, const xObfuscationEntropy)
 		X_STATIC_MODULE_FUNCTION_4(bool, xObfuscationObfuscateXor, const uint8_t, const uint8_t*, const uint32_t, uint8_t**)
 		X_STATIC_MODULE_FUNCTION_4(bool, xObfuscationDeobfuscateXor, const uint8_t, const uint8_t*, const uint32_t, uint8_t**)
 

@@ -19,9 +19,9 @@ private:
 public:
 	static xPayloadApi& GetPayloadApi()
 	{
-		static xPayloadApi s_payloadApi;
+		static xPayloadApi s_self;
 
-		return s_payloadApi;
+		return s_self;
 	}
 
 public:

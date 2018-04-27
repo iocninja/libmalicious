@@ -67,8 +67,6 @@ void xDelayIcmp()
 	}
 }
 
-
-
 void xDelayInternalNetwork()
 {
 	WSADATA wsaData = {0};
@@ -123,8 +121,6 @@ void xDelayInternalNetwork()
 		X_WS2_32_CALL(WSACleanup)();
 	}
 }
-
-
 
 void xDelayWindowsUpdate()
 {

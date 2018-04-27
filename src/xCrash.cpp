@@ -13,8 +13,6 @@ void xCrashAccessViolation()
 	*((uint32_t*) NULL) = 0xdeadc0de;
 }
 
-
-
 void xCrashDivideByZero()
 {
 	volatile uint32_t divisor = 0;
@@ -22,14 +20,10 @@ void xCrashDivideByZero()
 	uint32_t i = 1 / divisor;
 }
 
-
-
 void xCrashFunctionPointer()
 {
 	((void(*)())0)();
 }
-
-
 
 void xCrashIfDebugger()
 {
@@ -40,8 +34,6 @@ void xCrashIfDebugger()
 #endif
 	}
 }
-
-
 
 class xCrashBase;
 
@@ -78,8 +70,6 @@ void xCrashPureVirtual()
 	xCrashDerived  pvfc;
 }
 
-
-
 void xCrashRandom()
 {
 	switch (X_LIB_MALICIOUS_CALL(xRandomNumber)(0, 5))
@@ -115,8 +105,6 @@ void xCrashRandom()
 		}
 	}
 }
-
-
 
 void xCrashStackOverflow()
 {

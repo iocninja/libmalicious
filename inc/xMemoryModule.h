@@ -551,7 +551,13 @@ FARPROC xMemoryModuleDefaultGetProcAddress(HCUSTOMMODULE, LPCSTR, void*);
 
 
 
-#define X_MEMORY_MODULE_BEGIN(__Class, __Name) \
+#define X_MEMORY_MODULE_BEGIN(__Class) \
+	class __Class : public xMemoryModule \
+	{ \
+	public:	\
+		__Class() : xMemoryModule() {}
+
+#define X_MEMORY_MODULE_BEGIN_FILE(__Class, __Name) \
 	class __Class : public xMemoryModule \
 	{ \
 	public:	\

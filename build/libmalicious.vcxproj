@@ -31,6 +31,8 @@
   <ItemGroup>
     <ClInclude Include="..\external\aes256\aes256.h" />
     <ClInclude Include="..\external\MemoryModule\MemoryModule.h" />
+    <ClInclude Include="..\external\miniz\miniz.h" />
+    <ClInclude Include="..\inc\xCompression.h" />
     <ClInclude Include="..\inc\xConversion.h" />
     <ClInclude Include="..\inc\xCrash.h" />
     <ClInclude Include="..\inc\xDebuggerDetection.h" />
@@ -55,6 +57,8 @@
   <ItemGroup>
     <ClCompile Include="..\external\aes256\aes256.c" />
     <ClCompile Include="..\external\MemoryModule\MemoryModule.cpp" />
+    <ClCompile Include="..\external\miniz\miniz.c" />
+    <ClCompile Include="..\src\xCompression.cpp" />
     <ClCompile Include="..\src\xConversion.cpp" />
     <ClCompile Include="..\src\xCrash.cpp" />
     <ClCompile Include="..\src\xDebuggerDetection.cpp" />
@@ -143,8 +147,8 @@
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API;X_USE_MEMORY_MODULE</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_LIB_MALICIOUS_API;X_USE_LIB_MALICIOUS_EXTERNAL_API;X_USE_OS_API_DYNAMIC_MODULE</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule;..\external\miniz</AdditionalIncludeDirectories>
     </ClCompile>
     <PreBuildEvent>
       <Command>
@@ -162,8 +166,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>
       </FunctionLevelLinking>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API;X_USE_MEMORY_MODULE</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_LIB_MALICIOUS_API;X_USE_LIB_MALICIOUS_EXTERNAL_API;X_USE_OS_API_DYNAMIC_MODULE</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule;..\external\miniz</AdditionalIncludeDirectories>
     </ClCompile>
     <PreBuildEvent>
       <Command>
@@ -183,8 +187,8 @@
       <AssemblerOutput>NoListing</AssemblerOutput>
       <DebugInformationFormat>None</DebugInformationFormat>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API;X_USE_MEMORY_MODULE</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_LIB_MALICIOUS_API;X_USE_LIB_MALICIOUS_EXTERNAL_API;X_USE_OS_API_DYNAMIC_MODULE</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule;..\external\miniz</AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
@@ -205,8 +209,8 @@
       <AssemblerOutput>NoListing</AssemblerOutput>
       <DebugInformationFormat>None</DebugInformationFormat>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_OBFUSCATED_API;X_USE_MEMORY_MODULE</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;X_USE_LIB_MALICIOUS_API;X_USE_LIB_MALICIOUS_EXTERNAL_API;X_USE_OS_API_DYNAMIC_MODULE</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\inc;..\external\aes256;..\external\MemoryModule;..\external\miniz</AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
     </ClCompile>
     <Link>

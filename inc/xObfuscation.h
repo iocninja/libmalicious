@@ -131,9 +131,18 @@ template<typename _Function> constexpr xObfuscationObfuscatedAddress<_Function> 
 
 #define X_OBFUSCATED_ADDRESS(__Address) xObfuscationCreateObfuscatedAddress(__Address, X_RANDOM_NUMBER(0x00ff, 0xffff))
 
-bool xObfuscationObfuscateAes(const uint8_t* key, const uint32_t keySize, const uint8_t* plain, const uint32_t plainSize, uint8_t** obfuscated, uint32_t* obfuscatedSize);
 
-bool xObfuscationDeobfuscateAes(const uint8_t* key, const uint32_t keySize, const uint8_t* obfuscated, const uint32_t obfuscatedSize, uint8_t** plain, uint32_t* plainSize);
+
+typedef enum _xObfuscationEntropy
+{
+	xObfuscationEntropyDefault		= 0x01,
+	xObfuscationEntropyReduce		= 0x02,
+	xObfuscationEntropyReduceMore	= 0x03
+} xObfuscationEntropy;
+
+bool xObfuscationObfuscateAes(const uint8_t* key, const uint32_t keySize, const uint8_t* plain, const uint32_t plainSize, uint8_t** obfuscated, uint32_t* obfuscatedSize, const xObfuscationEntropy entropy);
+
+bool xObfuscationDeobfuscateAes(const uint8_t* key, const uint32_t keySize, const uint8_t* obfuscated, const uint32_t obfuscatedSize, uint8_t** plain, uint32_t* plainSize, const xObfuscationEntropy entropy);
 
 bool xObfuscationObfuscateXor(const uint8_t key, const uint8_t* plain, const uint32_t plainSize, uint8_t** obfuscated);
 

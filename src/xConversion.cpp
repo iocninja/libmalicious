@@ -40,8 +40,6 @@ bool xConversionHexStringToByte(const char* s, uint8_t** buffer, uint32_t* buffe
 	return true;
 }
 
-
-
 static const char g_encodingTable[] =
 {
 	'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
@@ -53,8 +51,6 @@ static const char g_encodingTable[] =
 	'w', 'x', 'y', 'z', '0', '1', '2', '3',
 	'4', '5', '6', '7', '8', '9', '+', '/'
 };
-
-
 
 bool xConversionBase64Encode(const uint8_t* data, const size_t dataSize, char** output, size_t* outputSize)
 {
@@ -104,7 +100,6 @@ bool xConversionBase64Encode(const uint8_t* data, const size_t dataSize, char** 
 
 	return true;
 }
-
 
 bool xConversionBase64Decode(const char* data, const size_t dataSize, uint8_t** output, size_t* outputSize)
 {
