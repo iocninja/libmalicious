@@ -107,6 +107,15 @@
     <ClInclude Include="..\inc\xCompression.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="..\inc\xDownload.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xBuffer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xPayload.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\xCrash.cpp">
@@ -158,6 +167,15 @@
       <Filter>external\miniz</Filter>
     </ClCompile>
     <ClCompile Include="..\src\xCompression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xDownload.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xBuffer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\xPayload.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,6 +7,7 @@
 
 #include <Windows.h>
 #include <IPHlpApi.h>
+#include <Wininet.h>
 
 #include "xDynamicModule.h"
 
@@ -147,6 +148,7 @@ static xOsApiDynamicModule& xGetOsApiDynamicModule() {return xOsApiDynamicModule
 #define X_OLE32_MEMORY_MODULE_CALL(__Name)		xGetOsApiMemoryModule().GetOle32().##__Name
 #define X_OLEAUT32_MEMORY_MODULE_CALL(__Name)	xGetOsApiMemoryModule().GetOleAut32().##__Name
 #define X_USER32_MEMORY_MODULE_CALL(__Name)		xGetOsApiMemoryModule().GetUser32().##__Name
+#define X_WININET_MEMORY_MODULE_CALL(__Name)	xGetOsApiMemoryModule().GetWininet().##__Name
 #define X_WS2_32_MEMORY_MODULE_CALL(__Name)		xGetOsApiMemoryModule().GetWs2_32().##__Name
 
 #define X_ADVAPI32_DYNAMIC_MODULE_CALL(__Name)	xGetOsApiDynamicModule().GetAdvapi32().##__Name
@@ -155,6 +157,7 @@ static xOsApiDynamicModule& xGetOsApiDynamicModule() {return xOsApiDynamicModule
 #define X_OLE32_DYNAMIC_MODULE_CALL(__Name)		xGetOsApiDynamicModule().GetOle32().##__Name
 #define X_OLEAUT32_DYNAMIC_MODULE_CALL(__Name)	xGetOsApiDynamicModule().GetOleAut32().##__Name
 #define X_USER32_DYNAMIC_MODULE_CALL(__Name)	xGetOsApiDynamicModule().GetUser32().##__Name
+#define X_WININET_DYNAMIC_MODULE_CALL(__Name)	xGetOsApiDynamicModule().GetWininet().##__Name
 #define X_WS2_32_DYNAMIC_MODULE_CALL(__Name)	xGetOsApiDynamicModule().GetWs2_32().##__Name
 
 
@@ -166,6 +169,7 @@ static xOsApiDynamicModule& xGetOsApiDynamicModule() {return xOsApiDynamicModule
 	#define X_OLE32_CALL		X_OLE32_MEMORY_MODULE_CALL
 	#define X_OLEAUT32_CALL		X_OLEAUT32_MEMORY_MODULE_CALL
 	#define X_USER32_CALL		X_USER32_MEMORY_MODULE_CALL
+	#define X_WININET_CALL		X_WININET_MEMORY_MODULE_CALL
 	#define X_WS2_32_CALL		X_WS2_32_MEMORY_MODULE_CALL
 #elif X_USE_OS_API_DYNAMIC_MODULE
 	#define X_ADVAPI32_CALL		X_ADVAPI32_DYNAMIC_MODULE_CALL
@@ -174,6 +178,7 @@ static xOsApiDynamicModule& xGetOsApiDynamicModule() {return xOsApiDynamicModule
 	#define X_OLE32_CALL		X_OLE32_DYNAMIC_MODULE_CALL
 	#define X_OLEAUT32_CALL		X_OLEAUT32_DYNAMIC_MODULE_CALL
 	#define X_USER32_CALL		X_USER32_DYNAMIC_MODULE_CALL
+	#define X_WININET_CALL		X_WININET_DYNAMIC_MODULE_CALL
 	#define X_WS2_32_CALL		X_WS2_32_DYNAMIC_MODULE_CALL
 #else
 	#define X_ADVAPI32_CALL(__Name)	__Name
@@ -182,5 +187,6 @@ static xOsApiDynamicModule& xGetOsApiDynamicModule() {return xOsApiDynamicModule
 	#define X_OLE32_CALL(__Name)	__Name
 	#define X_OLEAUT32_CALL(__Name)	__Name
 	#define X_USER32_CALL(__Name)	__Name
+	#define X_WININET_CALL(__Name)	__Name
 	#define X_WS2_32_CALL(__Name)	__Name
 #endif

