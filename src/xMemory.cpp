@@ -13,7 +13,7 @@ void* xMemoryAlloc(const size_t size)
 	return X_KERNEL32_CALL(VirtualAlloc)(NULL, size, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
 }
 
-void* xMemoryClone(void* memory, const size_t size)
+void* xMemoryClone(const void* memory, const size_t size)
 {
 	if (memory && size)
 	{

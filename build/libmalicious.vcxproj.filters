@@ -86,9 +86,6 @@
     <ClInclude Include="..\inc\xString.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\xPayloadApi.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\inc\xLibMaliciousExternalApi.h">
       <Filter>inc</Filter>
     </ClInclude>
@@ -114,6 +111,9 @@
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="..\inc\xPayload.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\xPayloadApi.h">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>

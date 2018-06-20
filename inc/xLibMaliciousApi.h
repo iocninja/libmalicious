@@ -77,6 +77,7 @@ public:
 
 		// xMemory
 		X_STATIC_MODULE_FUNCTION_1(void*, xMemoryAlloc, size_t)
+		X_STATIC_MODULE_FUNCTION_2(void*, xMemoryClone, const void*, size_t)
 		X_STATIC_MODULE_FUNCTION_3(void, xMemoryCopy, void*, const void*, size_t)
 		X_STATIC_MODULE_FUNCTION_1(void, xMemoryFree, void*)
 		X_STATIC_MODULE_FUNCTION_2(void, xMemoryZero, void*, const size_t)
